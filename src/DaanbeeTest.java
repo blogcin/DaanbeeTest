@@ -12,6 +12,7 @@ public class DaanbeeTest {
     private HttpServer httpServer = null;
     private final int PORT = 8000;
 
+    private final String API_LOCATION = "/api/";
     private final String SETTING_INFO = "setting_info";
     private final String ROUTER_ON_OFF = "router_on_off";
     public DaanbeeTest() {
@@ -22,8 +23,8 @@ public class DaanbeeTest {
             System.exit(1);
         }
 
-        httpServer.createContext("/" + SETTING_INFO, new SettingInfoHandler());
-        httpServer.createContext("/" + ROUTER_ON_OFF, new RouterOnOffHandler());
+        httpServer.createContext(API_LOCATION + SETTING_INFO, new SettingInfoHandler());
+        httpServer.createContext("API_LOCATION + ROUTER_ON_OFF, new RouterOnOffHandler());
 
         httpServer.setExecutor(null);
     }
